@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RapidCare - Reception</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Reception Dashboard</h1>
+    <a class="btn gray" href="/">Public</a>
+  </header>
+  <main>
+    <section class="card" id="login-box">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label class="label">Username</label><br>
+        <input id="u" />
+      </div>
+      <div class="form-group">
+        <label class="label">Password</label><br>
+        <input id="p" type="password" />
+      </div>
+      <button class="btn" id="login-btn">Login</button>
+      <div id="login-msg" style="margin-top:8px;"></div>
+    </section>
+
+    <section id="dash" style="display:none;">
+      <div class="tabbar">
+        <button class="btn" data-tab="beds">Beds</button>
+        <button class="btn" data-tab="doctors">Doctors</button>
+        <button class="btn" data-tab="ambulance">Ambulance</button>
+      </div>
+
+      <section id="tab-beds" class="card">
+        <h2>Beds</h2>
+        <div id="beds" class="list"></div>
+      </section>
+
+      <section id="tab-doctors" class="card" style="display:none;">
+        <h2>Doctors</h2>
+        <div id="doctors" class="list"></div>
+      </section>
+
+      <section id="tab-ambulance" class="card" style="display:none;">
+        <h2>Ambulance / Emergency Requests</h2>
+        <div id="requests" class="list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/js/reception.js"></script>
+</body>
+</html>

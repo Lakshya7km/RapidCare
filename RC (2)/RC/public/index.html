@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RapidCare - Emergency Management</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .hero { background: linear-gradient(120deg,#0b6efd,#6610f2); color:#fff; padding:48px 24px; }
+    .hero h1 { margin:0 0 8px 0; font-size: 32px; }
+    .hero p { margin:0; opacity: 0.9; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:16px; }
+    .card .subtitle { color:#666; margin-top:-6px; }
+    .tabs { display:flex; gap:8px; margin-top:12px; }
+    .tab { padding:8px 12px; border:1px solid #e6e6e6; background:#f8f9fa; border-radius:8px; cursor:pointer; }
+    .tab.active { background:#fff; border-color:#cfd3d7; }
+    .muted { color:#6c757d; }
+  </style>
+  </head>
+<body>
+  <div class="hero">
+    <h1>Welcome to RapidCare</h1>
+    <p>Your real-time solution for emergency medical coordination.</p>
+  </div>
+
+  <main>
+    <section class="grid">
+      <div class="card" style="grid-column: 1 / -1; border-top-color: var(--success-color);">
+        <h2>Our Core Services</h2>
+        <p style="margin-bottom: 16px;">RapidCare is a comprehensive platform designed to streamline emergency medical services, connecting patients, hospitals, and ambulance teams in real-time. Our goal is to reduce response times and improve patient outcomes during critical situations.</p>
+        <ul style="padding-left: 20px; margin-bottom: 0; display: grid; gap: 8px; list-style: none;">
+            <li style="display: flex; align-items: center; gap: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success-color);"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div><strong>Real-Time Availability:</strong> Instantly check bed and doctor availability across our network of hospitals.</div>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--danger-color);"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+              <div><strong>Emergency Dispatch:</strong> Send emergency requests directly to hospital reception desks for immediate attention.</div>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color);"><path d="M10.5 8.5L2 12l8.5 3.5L14 22l3.5-8.5L22 10l-8.5-1.5L10.5 2z"></path></svg>
+              <div><strong>Seamless Coordination:</strong> Enable ambulance staff to efficiently manage patient information and referrals.</div>
+            </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=2073&auto=format&fit=crop" alt="Hospital Exterior" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;">
+        <h2>Public Portal</h2>
+        <p class="subtitle">Explore hospitals, live beds & doctors</p>
+        <p>Open access for patients/guardians. View hospital details and send an emergency alert.</p>
+        <a class="btn" href="/hospitals.html">Explore Hospitals</a>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop" alt="Hospital Reception" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;">
+        <h2>Reception (Staff)</h2>
+        <p class="subtitle">Manage beds, doctors & ambulance requests</p>
+        <div class="tabs">
+          <div class="tab active" data-target="staff-login">Login</div>
+          <div class="tab" data-target="staff-register">Register</div>
+        </div>
+        <div id="staff-login">
+          <div class="form-group"><label class="label">Username</label><br><input id="staff-u" /></div>
+          <div class="form-group"><label class="label">Password</label><br><input id="staff-p" type="password" /></div>
+          <button class="btn" id="staff-login-btn">Login</button>
+          <div id="staff-login-msg" style="margin-top:8px;"></div>
+        </div>
+        <div id="staff-register" style="display:none;">
+          <div class="form-group"><label class="label">Full Name</label><br><input id="staff-name" /></div>
+          <div class="form-group"><label class="label">Contact</label><br><input id="staff-contact" /></div>
+          <div class="form-group"><label class="label">Username</label><br><input id="staff-ru" /></div>
+          <div class="form-group"><label class="label">Password</label><br><input id="staff-rp" type="password" /></div>
+          <button class="btn" id="staff-register-btn">Register</button>
+          <div id="staff-register-msg" style="margin-top:8px;"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1598847902014-95a23534b8cb?q=80&w=2070&auto=format&fit=crop" alt="Ambulance" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;">
+        <h2>Ambulance Portal</h2>
+        <p class="subtitle">Report emergency cases on the move</p>
+        <div class="tabs">
+          <div class="tab active" data-target="amb-login">Login</div>
+          <div class="tab" data-target="amb-register">Register</div>
+        </div>
+        <div id="amb-login">
+          <div class="form-group"><label class="label">Username</label><br><input id="amb-u" /></div>
+          <div class="form-group"><label class="label">Password</label><br><input id="amb-p" type="password" /></div>
+          <button class="btn" id="amb-login-btn">Login</button>
+          <div id="amb-login-msg" style="margin-top:8px;"></div>
+        </div>
+        <div id="amb-register" style="display:none;">
+          <div class="form-group"><label class="label">Full Name</label><br><input id="amb-name" /></div>
+          <div class="form-group"><label class="label">Contact</label><br><input id="amb-contact" /></div>
+          <div class="form-group"><label class="label">Username</label><br><input id="amb-ru" /></div>
+          <div class="form-group"><label class="label">Password</label><br><input id="amb-rp" type="password" /></div>
+          <button class="btn" id="amb-register-btn">Register</button>
+          <div id="amb-register-msg" style="margin-top:8px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/js/landing.js"></script>
+</body>
+</html>
